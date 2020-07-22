@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h3>Login</h3>
-	<form id="login" action="loginPprocess" method="post">
+	<form id="login" action="loginProcess" method="post">
 		<input type="text" name="username" placeholder="Username">
 		<input type="password" name="password" placeholder="Password">
 		

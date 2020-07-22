@@ -5,8 +5,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="userDetails")
-public class User {
+@Table(name="UserDetails")
+public class UserDetails {
 	@Id
 	private String username;
 	

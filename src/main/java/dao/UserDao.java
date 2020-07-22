@@ -1,10 +1,10 @@
 package dao;
 
 import model.Login;
-import model.User;
+import model.UserDetails;
 
 public interface UserDao {
-	void register(User user) ;
+	void register(UserDetails user) ;
 	
-	User validateUser(Login login);
+	UserDetails validateUser(Login login);
 }

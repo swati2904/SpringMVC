@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import model.User;
+import model.UserDetails;
 import service.UserService;
 
 @Controller 
@@ -31,7 +31,7 @@ public class RegistrationController {
 	}
 	
 	@RequestMapping(value="/registerProcess", method=RequestMethod.POST)
-	public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response, User user ) {
+	public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response, UserDetails user ) {
 		userService.register(user);
 		
 		return new ModelAndView("welcome","user",user.getFirstname());

@@ -1,9 +1,9 @@
 package service;
 
 import model.Login;
-import model.User;
+import model.UserDetails;
 
 public interface UserService {
-	void register (User user);
-	User validateUser(Login login);
+	void register (UserDetails user);
+	UserDetails validateUser(Login login);
 }

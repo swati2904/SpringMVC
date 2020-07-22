@@ -9,7 +9,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
 import model.Login;
-import model.User;
+import model.UserDetails;
 
 public class UserDaoImpl implements UserDao {
 
@@ -17,7 +17,7 @@ public class UserDaoImpl implements UserDao {
 	Session session = sf.openSession();
 	Transaction tx = null;
 	
-	public void register(User user) {
+	public void register(UserDetails user) {
 		tx = session.beginTransaction();
 		session.save(user);
 		tx.commit();
@@ -25,10 +25,10 @@ public class UserDaoImpl implements UserDao {
 		
 	}
 
-	public User validateUser(Login login) {
+	public UserDetails validateUser(Login login) {
 		tx = session.beginTransaction();
-		Query query = session.createQuery("from User where username='"+login.getUsername()+"' and password='"+login.getPassword()+"'");
-		List<User> user = query.list();
+		Query query = session.createQuery("from UserDetails where username='"+login.getUsername()+"' and password='"+login.getPassword()+"'");
+		List<UserDetails> user = query.list();
 		return user.get(0);
 		
 }

@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <title>Home</title>
 <style><%@include file="/WEB-INF/css/style.css"%></style>
 </head>
