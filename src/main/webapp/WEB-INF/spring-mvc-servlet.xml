@@ -10,6 +10,8 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 <context:component-scan base-package="controller"/>
 <context:annotation-config></context:annotation-config>
 
+<bean id= "userService" class="service.UserServiceImpl"/>
+<bean id ="userDao" class="dao.UserDaoImpl"/>
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 <property name="prefix">
 	<value>/WEB-INF/views/</value>

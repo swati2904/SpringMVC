@@ -30,7 +30,7 @@ public class RegistrationController {
 		return mav;
 	}
 	
-	@RequestMapping(value="/registerProcess", method=RequestMethod.GET)
+	@RequestMapping(value="/registerProcess", method=RequestMethod.POST)
 	public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response, User user ) {
 		userService.register(user);
 		
