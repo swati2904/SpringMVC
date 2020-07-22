@@ -1,12 +1,14 @@
 package dao;
 
-
+import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
+import model.Login;
 import model.User;
 
 public class UserDaoImpl implements UserDao {
@@ -22,6 +24,14 @@ public class UserDaoImpl implements UserDao {
 		
 		
 	}
+
+	public User validateUser(Login login) {
+		tx = session.beginTransaction();
+		Query query = session.createQuery("from User where username='"+login.getUsername()+"' and password='"+login.getPassword()+"'");
+		List<User> user = query.list();
+		return user.get(0);
+		
+}
 
 
 	
